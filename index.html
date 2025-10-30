@@ -349,50 +349,71 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header scroll-reveal">
-                <span class="section-tag">Get In Touch</span>
-                <h2 class="section-title">Let's Connect</h2>
-            </div>
+        <button class="contact-button">Get in Touch</button>
+        
+        <div class="contact-header">
+            <h2 class="contact-title">Let's Build Something</h2>
+            <h2 class="contact-title">Amazing Together</h2>
+        </div>
 
-            <div class="contact-content">
-                <div class="contact-info scroll-reveal-left">
-                    <div class="contact-details">
-                        <h3>Contact Information</h3>
-                        <p>Feel free to reach out for collaborations or just a friendly chat.</p>
-                        <div class="contact-links">
-                            <a href="mailto:ochaudhari004@gmail.com" class="contact-link">
-                                <i class="fas fa-envelope"></i>
-                                <span>ochaudhari004@gmail.com</span>
-                            </a>
-                            <a href="https://github.com/savageomie" target="_blank" class="contact-link">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
-                            </a>
-                            <a href="tel:+919699556562" class="contact-link">
-                                <i class="fas fa-phone"></i>
-                                <span>+91 9699556562</span>
-                            </a>
-                        </div>
+        <div class="contact-container">
+            <div class="contact-left">
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-envelope"></i>
                     </div>
+                    <div class="contact-card-content">
+                        <h3>Email</h3>
+                        <p>ochaudhari004@gmail.com</p>
+                    </div>
+                    <a href="mailto:ochaudhari004@gmail.com" class="contact-card-button">
+                        Send Message
+                    </a>
                 </div>
 
-                <form class="contact-form scroll-reveal-right" name="contact" method="POST" data-netlify="true">
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <div class="contact-card-content">
+                        <h3>LinkedIn</h3>
+                        <p>Let's connect professionally</p>
+                    </div>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-card-button">
+                        Connect
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="contact-card-content">
+                        <h3>GitHub</h3>
+                        <p>Check out my repositories</p>
+                    </div>
+                    <a href="https://github.com/savageomie" target="_blank" class="contact-card-button">
+                        Follow
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-right">
+                <form class="contact-form" name="contact" method="POST" data-netlify="true">
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">
-                        <span>Send Message</span>
-                        <i class="fas fa-paper-plane"></i>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">
+                        Send Message <i class="fas fa-paper-plane"></i>
                     </button>
                 </form>
             </div>
