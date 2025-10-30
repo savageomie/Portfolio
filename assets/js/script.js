@@ -48,6 +48,33 @@ class PortfolioApp {
         const menuToggle = document.querySelector('.mobile-menu-toggle');
         menuToggle?.addEventListener('click', () => this.toggleMobileMenu());
 
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Active link highlighting
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelector(`.nav-link[href="#${sectionId}"]`)?.classList.add('active');
+                } else {
+                    document.querySelector(`.nav-link[href="#${sectionId}"]`)?.classList.remove('active');
+                }
+            });
+        });
+
         // Navigation
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', (e) => {
@@ -108,7 +135,7 @@ class PortfolioApp {
     }
 
     initTypingEffect() {
-        const phrases = ['Computer Engineering Student', 'Machine Learning Engineer', 'Python Developer'];
+        const phrases = ['Software Developer', 'ML & AI Enthusiast', 'Problem Solver'];
         const typingText = document.querySelector('.typing-text');
         let phraseIndex = 0;
         let charIndex = 0;
@@ -127,13 +154,13 @@ class PortfolioApp {
 
             if (!isDeleting && charIndex === currentPhrase.length) {
                 isDeleting = true;
-                setTimeout(type, 2000);
+                setTimeout(type, 3000); // Longer pause at the end of phrase
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 phraseIndex = (phraseIndex + 1) % phrases.length;
-                setTimeout(type, 500);
+                setTimeout(type, 800); // Pause before starting new phrase
             } else {
-                setTimeout(type, isDeleting ? 100 : 200);
+                setTimeout(type, isDeleting ? 50 : 120); // Faster typing/deleting speed
             }
         };
 
